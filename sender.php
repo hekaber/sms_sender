@@ -12,11 +12,11 @@
     print "usage: php index.php user password destination message\n";
     print "The program will continue with the following default arguments: \n";
     print "User: " . $default_user . "\n";
-    print "Password: it is a secret even if it is poorly encoded\n";
+    print "Password: it is a 'secret'\n";
     print "Destination: " . $default_dest . "\n";
     print "Message: " . $default_message . "\n";
     print "Type 'y' to confirm... \n";
-    
+
     $handle = fopen ("php://stdin","r");
     $line = fgets($handle);
     if(trim($line) != 'y'){
