@@ -7,7 +7,4 @@ Usage
 --------
 type `php sender.php` on the command line and the program will execute with
 default parameters
-
-Create one Media file
----------------
-Add a new media to the database.
+otherwise you can execute it by passing arguments: `sender.php user password destination message`

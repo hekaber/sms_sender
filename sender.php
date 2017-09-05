@@ -1,35 +1,47 @@
 <?php
   require_once(dirname(__FILE__) . '/No2SMS_Client.class.php');
 
-  /* on test le nombre d'arguments */
-  $default_user = "devjob";
-  $default_password = "cG9vcmx5Y29kZWRwYXNzd29yZA==";
-  $default_dest = "41765756344";
-  $default_message = "test\ntest1";
+  /*
+    Certaines lignes sont commentées car le programme prenait des paramètres par
+    défaut, mais comme celui-ci est publié sur github il est plus sûr d'éviter
+    d'avoir les données de connection écrites en dur.
+  */
+  // $default_user = "";
+  // $default_password = "";
+  // $default_dest = "";
+  // $default_message = "";
 
+  /* on test le nombre d'arguments */
   if ($argc != 5) {
     /* affiche un message d'aide et termine le script */
     print "usage: php index.php user password destination message\n";
-    print "The program will continue with the following default arguments: \n";
-    print "User: " . $default_user . "\n";
-    print "Password: it is a 'secret'\n";
-    print "Destination: " . $default_dest . "\n";
-    print "Message: " . $default_message . "\n";
-    print "Type 'y' to confirm... \n";
+    exit(1);
 
-    $handle = fopen ("php://stdin","r");
-    $line = fgets($handle);
-    if(trim($line) != 'y'){
-        echo "ABORTING!\n";
-        exit(1);
-    }
-    fclose($handle);
+    // print "The program will continue with the following default arguments: \n";
+    // print "User: " . $default_user . "\n";
+    // print "Password: it is a 'secret'\n";
+    // print "Destination: " . $default_dest . "\n";
+    // print "Message: " . $default_message . "\n";
+    // print "Type 'y' to confirm... \n";
+    //
+    // $handle = fopen ("php://stdin","r");
+    // $line = fgets($handle);
+    // if(trim($line) != 'y'){
+    //     echo "ABORTING!\n";
+    //     exit(1);
+    // }
+    // fclose($handle);
   }
 
-  $user = (isset($argv[1]) ? $argv[1] : $default_user);
-  $password = (isset($argv[2]) ? $argv[2] : $default_password);
-  $destination = (isset($argv[3]) ? $argv[3] : $default_dest);
-  $message = (isset($argv[4]) ? $argv[4] : $default_message);
+  // $user = (isset($argv[1]) ? $argv[1] : $default_user);
+  // $password = (isset($argv[2]) ? $argv[2] : $default_password);
+  // $destination = (isset($argv[3]) ? $argv[3] : $default_dest);
+  // $message = (isset($argv[4]) ? $argv[4] : $default_message);
+
+  $user        = $argv[1];
+  $password    = $argv[2];
+  $destination = $argv[3];
+  $message     = $argv[4];
 
   print $user . " " . $password . " " . $destination . " " . $message . "\n";
 
